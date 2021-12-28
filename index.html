@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Video</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/animate.min.css" />
+
+    <link rel="stylesheet" href="css/hover.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="js" href="css/bootstrap.js" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
+    <style>
+        body {
+            background-color: cornsilk;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container py-5 ">
+        <div class="row">
+            <video src="media/SampleVideo_1280x720_5mb.mp4" id="myvideo" class=" play col-6 py-2 mx-auto shadow "
+                onclick="ToggleVideo(this)" style="height: 400px;width: 900px;"></video>
+        </div>
+        <h1 class="text-center my-5">Hover to play a Video</h1>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 my-4">
+
+            <video src="media/banana.mp4" class=" play  py-2 col shadow "
+                onmouseover="PlayLarge(this),ToggleVideo(this)" onmouseout="stopVideo(this)"></video>
+
+            <video src="media/cow.mp4" class=" play col py-2 shadow " onmouseover="PlayLarge(this),ToggleVideo(this)"
+                onmouseout="stopVideo(this)"></video>
+
+            <video src="media/strawberry.mp4" class=" play col py-2 shadow "
+                onmouseover="PlayLarge(this),ToggleVideo(this)" onmouseout="stopVideo(this)"></video>
+
+            <video src="media/SampleVideo_1280x720_5mb.mp4" class=" play col  py-2 shadow "
+                onmouseover="PlayLarge(this),ToggleVideo(this)" onmouseout="stopVideo(this)"></video>
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+        "use strict"
+
+        function PlayLarge(obj) {
+            document.getElementById("myvideo").src = obj.src
+            document.getElementById("myvideo").play();
+
+        }
+
+
+        function ToggleVideo(obj) {
+
+            if (obj.paused) {
+                obj.play()
+            } else {
+                obj.pause();
+            }
+        }
+
+        function stopVideo(obj) {
+
+            obj.pause()
+        }
+    </script>
+
+</body>
+
+</html>
